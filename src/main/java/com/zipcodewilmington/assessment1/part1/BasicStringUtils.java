@@ -9,7 +9,9 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
-        return null;
+        char firstLetter = Character.toUpperCase(str.charAt(0));
+        String capitalLetter = firstLetter + str.substring(1);
+        return capitalLetter;
     }
 
     /**
@@ -17,6 +19,7 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
+
         return null;
     }
 
