@@ -14,7 +14,7 @@ public abstract class Pet implements Animal {
     public Pet() {
         String name = "";
         petAge = 0;
-        PetOwner owner;
+
     }
 
     /**

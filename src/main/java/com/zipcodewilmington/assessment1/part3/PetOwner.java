@@ -5,14 +5,14 @@ package com.zipcodewilmington.assessment1.part3;
  */
 public class PetOwner {
     String ownerName = "";
-    Object[] ownersPets;
+    Pet[] pets = new Pet[10];
     /**
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
     public PetOwner(String name, Pet... pets) {
         this.ownerName = name;
-        this.ownersPets[0] = pets[0];
+        this.pets = pets;
 
     }
 
@@ -20,14 +20,15 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-        ownersPets[0] = pet;
+
+        this.pets[0] = pet;
     }
 
     /**
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
-        ownersPets[0] = null;
+        pets[0] = null;
 
     }
 
@@ -36,8 +37,8 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
-        for (int i = 0; i < ownersPets.length; i++){
-            if (ownersPets[i].equals(pet)){
+        for (int i = 0; i < pets.length; i++){
+            if (pets[i].equals(pet)){
                 return true;
             }
         }
@@ -87,6 +88,6 @@ public class PetOwner {
      * @return array representation of animals owned by this PetOwner
      */
     public Pet[] getPets() {
-        return null;
+        return pets;
     }
 }

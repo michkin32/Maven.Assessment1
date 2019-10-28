@@ -6,7 +6,7 @@ public class Jumper {
      * Complete the function below.
      */
     public int jumps(int k, int j) {
-        int jumpMin = 0;
+        /*int jumpMin = 0;
         for (int i = 0; i < k; i++){
             jumpMin++;
         }
@@ -23,5 +23,18 @@ public class Jumper {
             return jumpMin;
         }
         return jumpMax;
-    }
+    }*/
+        Integer totalJumps = 0;
+        Integer distanceToTop = 0;
+        for (int i = 0; i <= k - j; i += j) {
+            totalJumps++;
+            distanceToTop += j;
+        }
+        for (int i = distanceToTop; i < k; i++){
+                totalJumps++;
+            }
+
+        return  totalJumps;
+        }
 }
+
