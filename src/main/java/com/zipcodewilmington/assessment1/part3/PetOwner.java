@@ -4,23 +4,30 @@ package com.zipcodewilmington.assessment1.part3;
  * Created by leon on 2/16/18.
  */
 public class PetOwner {
+    String ownerName = "";
+    Object[] ownersPets;
     /**
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
     public PetOwner(String name, Pet... pets) {
+        this.ownerName = name;
+        this.ownersPets[0] = pets[0];
+
     }
 
     /**
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
+        ownersPets[0] = pet;
     }
 
     /**
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
+        ownersPets[0] = null;
 
     }
 
@@ -29,7 +36,12 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
-        return null;
+        for (int i = 0; i < ownersPets.length; i++){
+            if (ownersPets[i].equals(pet)){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -68,7 +80,7 @@ public class PetOwner {
      * @return the name property of the Pet
      */
     public String getName() {
-        return null;
+        return ownerName;
     }
 
     /**

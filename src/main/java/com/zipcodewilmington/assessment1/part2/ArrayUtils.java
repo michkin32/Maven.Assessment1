@@ -35,11 +35,12 @@ public class ArrayUtils {
             }
         }
 
-        Object[] arrayValues = new Object[counter];
+        Integer[] arrayValues = new Integer[counter];
         Integer secondCounter = 0;
         for(Object i : objectArray){
             if(!(i.equals(objectToRemove))){
-                arrayValues[secondCounter] = i;
+                arrayValues[secondCounter] = (Integer) i;
+                secondCounter++;
         }
         }
 
@@ -54,6 +55,9 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
+        for (int i = 0; i < objectArray.length; i++){
+
+        }
         return null;
     }
 
@@ -74,6 +78,15 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
+        Integer counter = 0;
+        for (Object i : objectArray){
+            counter++;}
+        for (Object i : objectArrayToAdd){
+                counter++;
+            }
+
+
+        Integer[] bigArray;
         return null;
     }
 }
