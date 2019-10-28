@@ -23,6 +23,7 @@ public class Dog extends Pet {
      */
     public Dog(String name) {
 
+
     }
 
     /**
@@ -32,12 +33,13 @@ public class Dog extends Pet {
      * age is 0
      */
     public Dog() {
+        String name = "Dogname";
     }
 
     /**
      * @return bark as a string
      */
     public String speak() {
-        return null;
+        return "bark";
     }
 }
