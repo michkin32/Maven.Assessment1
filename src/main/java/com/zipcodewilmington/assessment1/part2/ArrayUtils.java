@@ -55,10 +55,24 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
-        for (int i = 0; i < objectArray.length; i++){
-
+        Integer[] repeatingNums = {0,0,0,0,0,0,0,0,0,0,0};
+        int element = 0;
+        for (Object i: objectArray){
+            for (Object j : objectArray){
+                if (j==i){
+                    repeatingNums[element]++;
+                }
+            }
+            element++;
         }
-        return null;
+        Object mostCommon = 0;
+        for (int i = 0; i < repeatingNums.length - 1; i++){
+            if (repeatingNums[i] > repeatingNums[i+1]) {
+                mostCommon = objectArray[i];
+            }
+        }
+
+        return mostCommon;
     }
 
 
@@ -68,7 +82,27 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        Integer[] repeatingNums = {0,0,0,0,0,0,0,0,0,0};
+        int element = 0;
+        for (Object i: objectArray){
+            for (Object j : objectArray){
+                if (j==i){
+                    repeatingNums[element]++;
+                }
+            }
+            element++;
+        }
+        Integer[] lowestValue = {2};
+        Object leastCommon = 0;
+        for (int i = 0; i < repeatingNums.length - 1; i++){
+            if (repeatingNums[i] < lowestValue[0]) {
+                leastCommon = objectArray[i];
+                lowestValue[0] = (Integer) objectArray[i];
+            }
+        }
+
+        return leastCommon;
+
     }
 
     /**
@@ -86,7 +120,17 @@ public class ArrayUtils {
             }
 
 
-        Integer[] bigArray;
-        return null;
+        Integer[] bigArray = new Integer[counter];
+        Integer secondCounter = 0;
+        for (Object i : objectArray){
+            bigArray[secondCounter] = (Integer) i;
+            secondCounter++;
+        }
+        for (Object i : objectArrayToAdd){
+            bigArray[secondCounter] = (Integer) i;
+            secondCounter++;
+        }
+        return bigArray;
     }
+
 }
